@@ -9,6 +9,14 @@ A Claude AI skill that analyzes your projects and generates professional portfol
 
 ---
 
+## Project Website
+
+**New to Portfolio Showcase Generator?** Visit the [project landing page](https://infinyte.github.io/portfolio-showcase-generator) for an interactive overview with examples and demos.
+
+**Ready to install?** Continue reading below for installation instructions.
+
+---
+
 ## Table of Contents
 
 - [Why This Skill?](#why-this-skill)
