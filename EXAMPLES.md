@@ -1,5 +1,7 @@
 # 💡 Usage Examples & Scenarios
 
+> **Sample outputs:** Looking for complete generated showcases? See the [examples/](examples/) folder for full portfolio materials generated from real projects.
+
 Comprehensive examples showing how to use the Portfolio Showcase Generator skill for different project types and use cases.
 
 ---

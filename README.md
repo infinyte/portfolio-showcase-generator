@@ -231,7 +231,7 @@ my microservices migration project.
 - 3 resume bullet points
 - LinkedIn summary enhancement
 
-**More examples:** See [EXAMPLES.md](EXAMPLES.md)
+**More examples:** See [EXAMPLES.md](EXAMPLES.md) for usage patterns, or browse the [examples/](examples/) folder for complete generated showcases.
 
 ---
 
