@@ -1,4 +1,4 @@
-# 🎯 Portfolio Showcase Generator
+# Portfolio Showcase Generator
 
 **Transform your technical projects into compelling portfolio materials optimized for recruiters, hiring managers, and technical interviews.**
 
@@ -9,7 +9,7 @@ A Claude AI skill that analyzes your projects and generates professional portfol
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Why This Skill?](#why-this-skill)
 - [Features](#features)
@@ -25,7 +25,7 @@ A Claude AI skill that analyzes your projects and generates professional portfol
 
 ---
 
-## 🎪 Why This Skill?
+## Why This Skill?
 
 **The Problem:**
 - You've built amazing projects, but translating them into compelling portfolio materials is time-consuming
@@ -37,51 +37,51 @@ A Claude AI skill that analyzes your projects and generates professional portfol
 This skill acts as your personal portfolio writer and interview coach. Feed it your project (GitHub repo, project notes, or just describe it), and it generates audience-specific content that showcases your work professionally.
 
 **Perfect for:**
-- 💼 Software engineers in job searches
-- 🏗️ Architects building portfolios
-- 🎤 Anyone preparing for technical interviews
-- 📊 Engineers documenting their impact
-- 🚀 Developers showcasing side projects
+- Software engineers in job searches
+- Architects building portfolios
+- Anyone preparing for technical interviews
+- Engineers documenting their impact
+- Developers showcasing side projects
 
 ---
 
-## ✨ Features
+## Features
 
-### 🎯 **Multi-Audience Output**
+### Multi-Audience Output
 Generate content tailored to different audiences from the same project:
 - Executive summaries for recruiters (150-250 words)
 - Technical deep-dives for architects (800-1500 words)
 - STAR stories for interviews (90-120 seconds)
 
-### 📐 **Automatic Architecture Diagrams**
+### Automatic Architecture Diagrams
 Creates professional Mermaid diagrams:
 - System architecture
 - Data flow
 - Deployment topology
 - Integration patterns
 
-### 📊 **Business Impact Analysis**
+### Business Impact Analysis
 Extracts and presents quantifiable achievements:
 - Performance metrics
 - Cost savings
 - Scale achievements
 - Reliability improvements
 
-### 🎓 **Interview Preparation**
+### Interview Preparation
 Generates structured STAR format stories:
 - Technical problem-solving
 - Architectural decision-making
 - Leadership and influence
 - Handling constraints
 
-### 🔍 **Code Analysis**
+### Code Analysis
 Analyzes GitHub repositories to extract:
 - Tech stack and frameworks
 - Architectural patterns (DDD, microservices, etc.)
 - Infrastructure and deployment
 - Testing and quality practices
 
-### 📝 **Multiple Output Formats**
+### Multiple Output Formats
 - Markdown documents
 - Resume bullets (copy/paste ready)
 - LinkedIn profile enhancements
@@ -90,7 +90,7 @@ Analyzes GitHub repositories to extract:
 
 ---
 
-## 🎁 What It Generates
+## What It Generates
 
 ### 1. Executive Summary
 A concise, high-impact overview focused on business value:
@@ -148,7 +148,7 @@ Quantified achievements:
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 - Active [Claude.ai](https://claude.ai) account (Pro, Team, or Enterprise)
@@ -168,11 +168,11 @@ Quantified achievements:
 **Step 3:** Verify installation
 Ask Claude: *"Do you have the portfolio-showcase-generator skill?"*
 
-📖 **Need detailed instructions?** See [INSTALL.md](INSTALL.md)
+**Need detailed instructions?** See [INSTALL.md](INSTALL.md)
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### Example 1: From GitHub Repository
 ```
@@ -198,44 +198,44 @@ my microservices migration project.
 
 ---
 
-## 💡 Usage Examples
+## Usage Examples
 
 ### Scenario 1: Job Application Package
 **Input:**
 > "I need portfolio materials for my flight tracking system. It's a .NET 8.0 API with React frontend on Azure. I integrated data from three vendor APIs, used DDD patterns, and deployed to a Zero Trust environment. Create executive summary, technical deep-dive, and STAR stories."
 
 **Output:**
-- ✅ Executive summary (212 words)
-- ✅ Technical deep-dive (2,500 words)
-- ✅ 3 architecture diagrams
-- ✅ 4 STAR stories
-- ✅ Metrics dashboard
-- ✅ Resume bullets
+- Executive summary (212 words)
+- Technical deep-dive (2,500 words)
+- 3 architecture diagrams
+- 4 STAR stories
+- Metrics dashboard
+- Resume bullets
 
 ### Scenario 2: Side Project Showcase
 **Input:**
 > "I built DocFlow, an AI-powered whiteboard scanner using computer vision and OCR. Create materials for my portfolio site including architecture diagrams."
 
 **Output:**
-- ✅ Technical deep-dive emphasizing ML/CV skills
-- ✅ Architecture diagrams (ML pipeline, system design)
-- ✅ GitHub Pages structure
-- ✅ Demo walkthrough content
+- Technical deep-dive emphasizing ML/CV skills
+- Architecture diagrams (ML pipeline, system design)
+- GitHub Pages structure
+- Demo walkthrough content
 
 ### Scenario 3: Quick Resume Update
 **Input:**
 > "I led a microservices migration that reduced deployment time from 2 hours to 15 minutes and improved uptime from 95% to 99.5%. Just need an executive summary."
 
 **Output:**
-- ✅ 180-word executive summary
-- ✅ 3 resume bullet points
-- ✅ LinkedIn summary enhancement
+- 180-word executive summary
+- 3 resume bullet points
+- LinkedIn summary enhancement
 
-📖 **More examples:** See [EXAMPLES.md](EXAMPLES.md)
+**More examples:** See [EXAMPLES.md](EXAMPLES.md)
 
 ---
 
-## 📥 Input Formats
+## Input Formats
 
 The skill accepts multiple input formats (mix and match):
 
@@ -270,7 +270,7 @@ requests/second and uses OAuth 2.0..."
 
 ---
 
-## 📊 Output Samples
+## Output Samples
 
 ### Executive Summary Sample
 ```markdown
@@ -302,7 +302,7 @@ data freshness, and improved system reliability to 99.9% uptime.
 
 ---
 
-## 🎯 Use Cases
+## Use Cases
 
 ### For Job Seekers
 - Create ATS-optimized resume bullets
@@ -330,7 +330,7 @@ data freshness, and improved system reliability to 99.9% uptime.
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 portfolio-showcase-generator/
@@ -348,7 +348,7 @@ portfolio-showcase-generator/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Here's how you can help:
 
@@ -368,13 +368,13 @@ Contributions are welcome! Here's how you can help:
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Built for the Claude AI platform by [Anthropic](https://anthropic.com)
 - Inspired by the need for better technical portfolio materials
@@ -382,7 +382,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📧 Contact & Support
+## Contact & Support
 
 - **Issues**: [GitHub Issues](../../issues)
 - **Discussions**: [GitHub Discussions](../../discussions)
@@ -390,10 +390,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🌟 Star History
+## Star History
 
-If this skill helped you land an interview or showcase your work, consider giving it a star! ⭐
+If this skill helped you land an interview or showcase your work, consider giving it a star!
 
 ---
 
-**Made with ❤️ for engineers building amazing things**
+**Made for engineers building amazing things**
