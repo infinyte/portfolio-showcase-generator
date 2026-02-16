@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Showcase Generator - Transform Your Technical Projects</title>
+    <meta name="description" content="Claude AI skill that transforms technical projects into compelling portfolio materials. Generate executive summaries, technical deep-dives, STAR stories, and architecture diagrams in minutes.">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --color-bg: #0a0e14;
+            --color-bg-secondary: #141925;
+            --color-text: #e6edf3;
+            --color-text-muted: #8b949e;
+            --color-accent: #58a6ff;
+            --color-accent-bright: #79c0ff;
+            --color-success: #3fb950;
+            --color-warning: #d29922;
+            --color-border: #30363d;
+            --font-display: 'Space Mono', monospace;
+            --font-body: 'Work Sans', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(88, 166, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(63, 185, 80, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            background: rgba(10, 14, 20, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-accent-bright);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo::before {
+            content: '>';
+            font-size: 1.5rem;
+            color: var(--color-success);
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--color-accent-bright);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent-bright) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--color-text-muted);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-accent-bright);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--color-accent);
+            color: white;
+            border-color: var(--color-accent);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-accent-bright);
+            border-color: var(--color-accent-bright);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(88, 166, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-text);
+            border-color: var(--color-border);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent-bright);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            border-top: 1px solid var(--color-border);
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--color-accent-bright);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-success));
+            border-radius: 8px;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .feature-card h3 {
+            font-family: var(--font-display);
+            color: var(--color-accent-bright);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .feature-card p {
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+        
+        /* Demo Section */
+        .demo {
+            padding: 4rem 0;
+            border-top: 1px solid var(--color-border);
+        }
+        
+        .demo-content {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .code-block {
+            background: #161b22;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .code-block code {
+            color: var(--color-success);
+        }
+        
+        .output-preview {
+            background: #0d1117;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .output-preview h4 {
+            color: var(--color-warning);
+            font-family: var(--font-display);
+            margin-bottom: 1rem;
+        }
+        
+        /* Use Cases */
+        .use-cases {
+            padding: 4rem 0;
+            border-top: 1px solid var(--color-border);
+        }
+        
+        .use-case-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .use-case {
+            background: var(--color-bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .use-case:hover {
+            border-color: var(--color-accent);
+            transform: translateX(4px);
+        }
+        
+        .use-case-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            background: var(--color-accent);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .use-case h4 {
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .use-case p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            padding: 6rem 0;
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+        }
+        
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .final-cta p {
+            color: var(--color-text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            color: var(--color-text-muted);
+        }
+        
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: var(--color-accent-bright);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .hero-stats {
+                gap: 1.5rem;
+            }
+            
+            nav {
+                gap: 1rem;
+            }
+            
+            .features-grid,
+            .use-case-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Portfolio Showcase Generator</a>
+                <nav>
+                    <a href="#features">Features</a>
+                    <a href="#demo">Demo</a>
+                    <a href="#use-cases">Use Cases</a>
+                    <a href="https://github.com/YOUR_USERNAME/portfolio-showcase-generator" target="_blank">GitHub</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Transform Your Technical Work<br>Into Portfolio Gold</h1>
+                <p class="subtitle">
+                    A Claude AI skill that generates executive summaries, technical deep-dives, 
+                    STAR interview stories, and architecture diagrams from your projects—in minutes.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">95%</span>
+                        <span class="stat-label">Time Savings</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">5min</span>
+                        <span class="stat-label">Per Project</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">6+</span>
+                        <span class="stat-label">Output Types</span>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="INSTALL.md" class="btn btn-primary">
+                        Install Now
+                    </a>
+                    <a href="EXAMPLES.md" class="btn btn-secondary">
+                        View Examples
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title">// Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">MA</span>
+                        <h3>Multi-Audience Output</h3>
+                        <p>Generate content tailored for recruiters (executive summaries), architects (technical deep-dives), and interviewers (STAR stories) from the same project.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">AD</span>
+                        <h3>Architecture Diagrams</h3>
+                        <p>Automatic generation of professional Mermaid diagrams: system architecture, data flow, and deployment topology.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">IA</span>
+                        <h3>Impact Analysis</h3>
+                        <p>Extract and present quantifiable achievements: performance metrics, cost savings, scale improvements, and reliability gains.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">IP</span>
+                        <h3>Interview Prep</h3>
+                        <p>Generate structured STAR format stories (90-120 seconds) ready for technical interviews and behavioral rounds.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">CA</span>
+                        <h3>Code Analysis</h3>
+                        <p>Analyzes GitHub repositories to extract tech stack, architectural patterns, and implementation details automatically.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">MF</span>
+                        <h3>Multiple Formats</h3>
+                        <p>Outputs as Markdown documents, resume bullets, LinkedIn enhancements, and GitHub Pages structures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="demo">
+            <div class="container">
+                <h2 class="section-title">// Quick Demo</h2>
+                <div class="demo-content">
+                    <h3 style="margin-bottom: 1rem; color: var(--color-accent-bright);">Input (Your Project)</h3>
+                    <div class="code-block">
+                        <code>Use portfolio-showcase-generator skill:
+
+I built a real-time analytics pipeline using Python, Kafka, and 
+PostgreSQL. It processes 100K events/second and reduced ML model 
+training time from 6 hours to 45 minutes.
+
+Create executive summary, technical deep-dive, and STAR stories.</code>
+                    </div>
+                    
+                    <h3 style="margin: 2rem 0 1rem; color: var(--color-accent-bright);">Output (In 5 Minutes)</h3>
+                    <div class="output-preview">
+                        <h4>→ Executive Summary (212 words)</h4>
+                        <h4>→ Technical Deep-Dive (1,800 words)</h4>
+                        <h4>→ 3 Architecture Diagrams</h4>
+                        <h4>→ 4 STAR Interview Stories</h4>
+                        <h4>→ Metrics Dashboard</h4>
+                        <h4>→ Resume Bullets</h4>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="examples/sample-output-enterprise-dotnet.md" class="btn btn-secondary">
+                            View Full Example Output →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="use-cases" class="use-cases">
+            <div class="container">
+                <h2 class="section-title">// Perfect For</h2>
+                <div class="use-case-list">
+                    <div class="use-case">
+                        <span class="use-case-icon">JS</span>
+                        <div>
+                            <h4>Job Seekers</h4>
+                            <p>ATS-optimized resume bullets and compelling LinkedIn profiles</p>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case">
+                        <span class="use-case-icon">SE</span>
+                        <div>
+                            <h4>Senior Engineers</h4>
+                            <p>Promotion packets demonstrating technical leadership</p>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case">
+                        <span class="use-case-icon">IN</span>
+                        <div>
+                            <h4>Interview Prep</h4>
+                            <p>Ready-to-deliver STAR stories for behavioral rounds</p>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case">
+                        <span class="use-case-icon">OS</span>
+                        <div>
+                            <h4>OSS Maintainers</h4>
+                            <p>Quantify community impact for professional portfolios</p>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case">
+                        <span class="use-case-icon">ST</span>
+                        <div>
+                            <h4>Startup Engineers</h4>
+                            <p>Showcase both building and scaling capabilities</p>
+                        </div>
+                    </div>
+                    
+                    <div class="use-case">
+                        <span class="use-case-icon">CP</span>
+                        <div>
+                            <h4>Career Pivoters</h4>
+                            <p>Bridge experience gaps during domain transitions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <div class="container">
+                <h2>Ready to Showcase Your Work?</h2>
+                <p>Stop underselling yourself. Transform your technical projects into professional portfolio materials in minutes.</p>
+                <div class="cta-buttons">
+                    <a href="INSTALL.md" class="btn btn-primary">
+                        Get Started Free
+                    </a>
+                    <a href="ABOUT.md" class="btn btn-secondary">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                Built for engineers building amazing things<br>
+                <a href="https://github.com/YOUR_USERNAME/portfolio-showcase-generator">View on GitHub</a> • 
+                <a href="LICENSE">MIT License</a> • 
+                <a href="CONTRIBUTING.md">Contribute</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
