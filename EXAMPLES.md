@@ -43,26 +43,26 @@ Use portfolio-showcase-generator skill:
 ```
 Use the portfolio-showcase-generator skill for my project:
 
-I built FLIFO Flight Status V2.0, a real-time flight operations 
-dashboard. Tech stack: .NET 8.0, React, Azure (App Service, SQL, 
-Service Bus). Key features:
-- Integrated 3 vendor APIs (1200 Aero, C360, Signet)
-- First deployment to Zero Trust environment
-- DDD architecture with event-driven patterns
-- 99.9% uptime, <200ms API response, 500+ concurrent users
+I built DocFlow, an AI-powered documentation toolkit that transforms 
+whiteboard photos into working code. Tech stack: .NET 8.0, C#, OpenCV, 
+PyTorch/ONNX, Tesseract OCR. Key features:
+- Computer vision pipeline with 92%+ accuracy on hand-drawn diagrams
+- Genetic algorithm for diagram layout optimization
+- Bidirectional C# ↔ Mermaid transformation
+- 91+ automated tests with CI/CD integration
 
 I need all materials: executive summary, technical deep-dive, 
 STAR stories, and architecture diagrams.
 ```
 
 **Output Includes:**
-- ✅ Executive summary (212 words)
-- ✅ Technical deep-dive (2,500 words)
-- ✅ 3 architecture diagrams (system, data flow, Zero Trust)
-- ✅ 4 STAR interview stories
-- ✅ Metrics dashboard
-- ✅ Resume bullets
-- ✅ Interview talking points
+- Executive summary (230 words)
+- Technical deep-dive (4,500 words)
+- 3 architecture diagrams (System, Vision Pipeline, Genetic Algorithm)
+- 4 STAR interview stories
+- Metrics dashboard
+- Resume bullets
+- Interview talking points
 
 ---
 
@@ -667,26 +667,39 @@ The skill generates markdown - save outputs for:
 
 ---
 
-## ❓ FAQ
+## FAQ
 
 **Q: Can I use this for multiple projects?**
+
 A: Yes! Run the skill for each project, then combine outputs for a comprehensive portfolio.
 
+---
+
 **Q: How detailed should my input be?**
+
 A: More detail = better output. Minimum: project description, tech stack, 1-2 key achievements.
 
+---
+
 **Q: Can I customize output length?**
+
 A: Yes! Specify desired length: "Create a 150-word executive summary" or "Keep technical deep-dive under 1000 words."
 
+---
+
 **Q: What if I don't have metrics?**
+
 A: The skill will work with what you have, but try to include:
 - Approximate scale (users, data volume)
 - Relative improvements (faster, more reliable)
 - Qualitative impacts (enabled new features, improved UX)
 
+---
+
 **Q: Can I use this for team projects?**
+
 A: Yes! Focus on your specific contributions: "I built the authentication layer..." or "I led the database migration..."
 
 ---
 
-**Ready to create amazing portfolio materials? Check out the [README](README.md) for installation instructions!** 🚀
+**Ready to create amazing portfolio materials? Check out the [README](README.md) for installation instructions!**

@@ -9,6 +9,14 @@ A Claude AI skill that analyzes your projects and generates professional portfol
 
 ---
 
+## Project Website
+
+**New to Portfolio Showcase Generator?** Visit the [project landing page](https://infinyte.github.io/portfolio-showcase-generator) for an interactive overview with examples and demos.
+
+**Ready to install?** Continue reading below for installation instructions.
+
+---
+
 ## Table of Contents
 
 - [Why This Skill?](#why-this-skill)
@@ -95,11 +103,12 @@ Analyzes GitHub repositories to extract:
 ### 1. Executive Summary
 A concise, high-impact overview focused on business value:
 ```
-Led development of FLIFO Flight Status V2.0, the first production 
-application in our enterprise's new Zero Trust security architecture. 
-Achieved 99.9% uptime while supporting 500+ concurrent users and 
-processing 10K+ flight status updates daily with sub-200ms API 
-response times...
+Built DocFlow, an open-source AI-powered documentation toolkit that 
+transforms whiteboard photos into working code through computer vision 
+and machine learning. Achieved 92%+ accuracy on hand-drawn diagrams 
+while reducing documentation time from hours to seconds. Implemented 
+complete pipeline with 91+ automated tests and genetic algorithm-based 
+layout optimization.
 ```
 
 ### 2. Technical Deep-Dive
@@ -341,9 +350,7 @@ portfolio-showcase-generator/
 ├── ABOUT.md                     # Promotional overview
 ├── LICENSE                      # MIT License
 └── examples/                    # Sample outputs
-    ├── flifo-showcase.md        # Enterprise .NET project sample
-    ├── ml-pipeline-showcase.md  # ML/Data engineering sample
-    └── microservices-showcase.md # Microservices migration sample
+    └── sample-output-ml-cv-docflow.md  # ML/Computer Vision project sample
 ```
 
 ---

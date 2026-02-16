@@ -390,7 +390,7 @@ Before delivering, ensure:
 
 ## Example Prompts
 
-**Simple**: "Create a portfolio showcase for my FLIFO project on GitHub"
+**Simple**: "Create a portfolio showcase for my DocFlow project on GitHub"
 
 **Detailed**: "I built a flight status dashboard using .NET 8, DDD, and Azure. It was the first app deployed to our Zero Trust environment. I need an executive summary for recruiters and a technical deep-dive for the interview, plus architecture diagrams."
 
